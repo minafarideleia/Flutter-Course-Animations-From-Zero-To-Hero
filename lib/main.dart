@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course_animations_from_zero_to_hero/Lecture1.dart';
+import 'package:flutter_course_animations_from_zero_to_hero/AnimatedAlignExample.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,15 +43,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MyWidget()));
+                          builder: (context) => const AnimatedAlignExample()));
                 },
-                child: const Text("Lecture #1")),
+                child: const Text("Animated Align Example")),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MyWidget()));
+                          builder: (context) => const AnimatedAlignExample()));
                 },
                 child: const Text("Lecture #2"))
           ],
