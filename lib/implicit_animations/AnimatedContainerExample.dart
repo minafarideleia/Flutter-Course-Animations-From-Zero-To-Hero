@@ -37,6 +37,7 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
             _setAnimationValues();
           },
           child: AnimatedContainer(
+            curve: Curves.bounceOut,
             width: _width,
             height: _height,
             duration: const Duration(milliseconds: 400),

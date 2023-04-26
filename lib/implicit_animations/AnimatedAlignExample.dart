@@ -23,6 +23,7 @@ class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
         children: [
           AnimatedAlign(
             alignment: getNextAlignment(_jerryAligned),
+            curve: Curves.easeInCirc,
             duration: const Duration(milliseconds: 400),
             child: Container(
               width: 100,
@@ -32,6 +33,7 @@ class _AnimatedAlignExampleState extends State<AnimatedAlignExample> {
             ),
           ),
           AnimatedAlign(
+            curve: Curves.linear,
             alignment: getNextAlignment(_jerryAligned + 1),
             duration: const Duration(milliseconds: 400),
             child: Container(
