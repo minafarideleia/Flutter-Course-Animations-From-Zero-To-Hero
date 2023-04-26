@@ -3,6 +3,7 @@ import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/
 
 import 'implicit_animations/AnimatedContainerExample.dart';
 import 'implicit_animations/AnimatedOpacityExample.dart';
+import 'implicit_animations/AnimatedPaddingExample.dart';
 import 'implicit_animations/AnimatedTextStyle.dart';
 
 void main() {
@@ -77,6 +78,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               const AnimatedOpacityExample()));
                 },
                 child: const Text("Animated Opacity Example")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const AnimatedPAddingExample()));
+                },
+                child: const Text("Animated PAdding Example")),
           ],
         )));
   }
