@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_course_animations_from_zero_to_hero/AnimatedAlignExample.dart';
+import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/AnimatedAlignExample.dart';
+
+import 'implicit_animations/AnimatedContainerExample.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Animation Course',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
       ),
       home: const MyHomePage(),
     );
@@ -51,9 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AnimatedAlignExample()));
+                          builder: (context) =>
+                              const AnimatedContainerExample()));
                 },
-                child: const Text("Lecture #2"))
+                child: const Text("Animated Container Example"))
           ],
         )));
   }
