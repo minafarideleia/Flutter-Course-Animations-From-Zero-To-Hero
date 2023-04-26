@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/AnimatedAlignExample.dart';
 
 import 'implicit_animations/AnimatedContainerExample.dart';
+import 'implicit_animations/AnimatedTextStyle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) =>
                               const AnimatedContainerExample()));
                 },
-                child: const Text("Animated Container Example"))
+                child: const Text("Animated Container Example")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const AnimatedTextSizeExample()));
+                },
+                child: const Text("Animated TextSize Example"))
           ],
         )));
   }
