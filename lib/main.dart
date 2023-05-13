@@ -5,6 +5,7 @@ import 'implicit_animations/AnimatedContainerExample.dart';
 import 'implicit_animations/AnimatedOpacityExample.dart';
 import 'implicit_animations/AnimatedPaddingExample.dart';
 import 'implicit_animations/AnimatedPhysicalModelExample.dart';
+import 'implicit_animations/AnimatedPositioned.dart';
 import 'implicit_animations/AnimatedTextStyle.dart';
 
 void main() {
@@ -97,6 +98,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               const AnimatedPhysicalModelExample()));
                 },
                 child: const Text("Animated Physical ModelExample")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const AnimatedPositionedExample()));
+                },
+                child: const Text("Animated Positioned Example")),
           ],
         )));
   }
