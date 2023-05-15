@@ -8,6 +8,7 @@ import 'implicit_animations/AnimatedPaddingExample.dart';
 import 'implicit_animations/AnimatedPhysicalModelExample.dart';
 import 'implicit_animations/AnimatedPositioned.dart';
 import 'implicit_animations/AnimatedPositionedDirectional.dart';
+import 'implicit_animations/AnimatedSwitcherExample.dart';
 import 'implicit_animations/AnimatedTextStyle.dart';
 
 void main() {
@@ -127,6 +128,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               const AnimatedCrossFadeExample()));
                 },
                 child: const Text("Animated Cross Fade Example")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const AnimatedSwitcherExample()));
+                },
+                child: const Text("Animated Switcher Example")),
           ],
         )));
   }
