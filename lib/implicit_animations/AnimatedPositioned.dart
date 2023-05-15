@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class AnimatedPositionedExample extends StatefulWidget {
   const AnimatedPositionedExample({super.key});
