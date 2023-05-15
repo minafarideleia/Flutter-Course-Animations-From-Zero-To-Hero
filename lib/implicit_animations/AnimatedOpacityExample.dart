@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class AnimatedOpacityExample extends StatefulWidget {
   const AnimatedOpacityExample({super.key});
