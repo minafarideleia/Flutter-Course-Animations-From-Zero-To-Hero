@@ -25,7 +25,7 @@ class _PositionedTransitionExamlpeState
 
     _jerryAnimation = RelativeRectTween(
             begin: const RelativeRect.fromLTRB(0, 0, 0, 0),
-            end: const RelativeRect.fromLTRB(300, 300, 0, 0))
+            end: const RelativeRect.fromLTRB(250, 250, 0, 0))
         .animate(_controller);
 
     _tomAnimation = RelativeRectTween(
