@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/AnimatedAlignExample.dart';
 
 import 'explict_animations/PositionedTransitionExamlpe.dart';
+import 'explict_animations/RotationTransitionExample.dart';
 import 'explict_animations/SizeTransitionExample.dart';
 import 'implicit_animations/AnimatedContainerExample.dart';
 import 'implicit_animations/AnimatedCrossFadeExample.dart';
@@ -167,6 +168,16 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => const SizeTransitionExample()));
                 },
                 child: const Text("Size Transition Example")),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const RotationTransitionExample()));
+                },
+                child: const Text("Rotation Transition Example")),
           ],
         )));
   }
