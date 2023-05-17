@@ -7,6 +7,7 @@ import 'explict_animations/PositionedDirectionalTransitionExample.dart';
 import 'explict_animations/PositionedTransitionExamlpe.dart';
 import 'explict_animations/RotationTransitionExample.dart';
 import 'explict_animations/SizeTransitionExample.dart';
+import 'explict_animations/TweenAnimationBuilderExample.dart';
 import 'implicit_animations/AnimatedContainerExample.dart';
 import 'implicit_animations/AnimatedCrossFadeExample.dart';
 import 'implicit_animations/AnimatedListExample.dart';
@@ -210,6 +211,16 @@ class _MyHomePageState extends State<MyHomePage> {
                               const PositionedDirectionalTransitionExample()));
                 },
                 child: const Text("Positioned Directional Transition Example")),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const TweenAnimationBuilderExample()));
+                },
+                child: const Text("Tween Animation Builder Example")),
           ],
         )));
   }
