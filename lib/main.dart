@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/AnimatedAlignExample.dart';
 
 import 'explict_animations/AnimatedBuilderExample.dart';
+import 'explict_animations/FadeTransitionExample.dart';
 import 'explict_animations/PositionedTransitionExamlpe.dart';
 import 'explict_animations/RotationTransitionExample.dart';
 import 'explict_animations/SizeTransitionExample.dart';
@@ -189,6 +190,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               const AnimatedBuilderExample()));
                 },
                 child: const Text("Animated Builde rExample")),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FadeTransitionExample()));
+                },
+                child: const Text("Fade Transition Example")),
           ],
         )));
   }
