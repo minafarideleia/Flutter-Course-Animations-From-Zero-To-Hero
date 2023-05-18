@@ -44,8 +44,11 @@ class _IndexedStackTransitionExampleState
   }
 
   void _changeScreen() {
+    _currentIndex = _currentIndex + 1;
+    if (_currentIndex == 3) {
+      _currentIndex = 0;
+    }
     setState(() {
-      _currentIndex = (_currentIndex + 1) % 3;
       _controller.reset();
       _controller.forward();
     });
@@ -68,13 +71,7 @@ class _IndexedStackTransitionExampleState
                 child: Container(
                   alignment: Alignment.center,
                   color: Colors.red,
-                  child: Text(
-                    'Screen 1',
-                    style: TextStyle(
-                      fontSize: 32.0,
-                      color: Colors.white,
-                    ),
-                  ),
+                  child: Image.asset("assets/jerry.png"),
                 ),
               ),
             ),
@@ -83,13 +80,7 @@ class _IndexedStackTransitionExampleState
               child: Container(
                 alignment: Alignment.center,
                 color: Colors.green,
-                child: Text(
-                  'Screen 2',
-                  style: TextStyle(
-                    fontSize: 32.0,
-                    color: Colors.white,
-                  ),
-                ),
+                child: Image.asset("assets/dog.png"),
               ),
             ),
             ScaleTransition(
@@ -97,13 +88,7 @@ class _IndexedStackTransitionExampleState
               child: Container(
                 alignment: Alignment.center,
                 color: Colors.blue,
-                child: Text(
-                  'Screen 3',
-                  style: TextStyle(
-                    fontSize: 32.0,
-                    color: Colors.white,
-                  ),
-                ),
+                child: Image.asset("assets/tom.png"),
               ),
             ),
           ],
