@@ -3,6 +3,7 @@ import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/
 
 import 'explict_animations/AnimatedBuilderExample.dart';
 import 'explict_animations/FadeTransitionExample.dart';
+import 'explict_animations/IndexedStackTransitionExample.dart';
 import 'explict_animations/PositionedDirectionalTransitionExample.dart';
 import 'explict_animations/PositionedTransitionExamlpe.dart';
 import 'explict_animations/RotationTransitionExample.dart';
@@ -221,6 +222,16 @@ class _MyHomePageState extends State<MyHomePage> {
                               const TweenAnimationBuilderExample()));
                 },
                 child: const Text("Tween Animation Builder Example")),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              IndexedStackTransitionExample()));
+                },
+                child: const Text("IndexedStackTransitionExample")),
           ],
         )));
   }
