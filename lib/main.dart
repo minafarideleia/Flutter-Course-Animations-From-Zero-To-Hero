@@ -27,6 +27,7 @@ import 'implicit_animations/AnimatedPositioned.dart';
 import 'implicit_animations/AnimatedPositionedDirectional.dart';
 import 'implicit_animations/AnimatedSwitcherExample.dart';
 import 'implicit_animations/AnimatedTextStyle.dart';
+import 'more_animations/CustomePainterExample.dart';
 import 'page_transitions/PageSizeTransition.dart';
 
 void main() {
@@ -319,6 +320,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: const Text(
                   "Page Mix Scale Rotate Transition",
+                  style: TextStyle(color: Colors.white),
+                )),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CustomePainterExmaple()));
+                },
+                child: const Text(
+                  "Custome Painter Exmaple",
                   style: TextStyle(color: Colors.white),
                 )),
           ],
