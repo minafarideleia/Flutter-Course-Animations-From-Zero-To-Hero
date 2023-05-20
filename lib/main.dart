@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/AnimatedAlignExample.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageFadeTransition.dart';
+import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageScaleTransition.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageTwo.dart';
 
 import 'explict_animations/AnimatedBuilderExample.dart';
@@ -253,6 +254,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: const Text(
                   "Page Fade Transition",
+                  style: TextStyle(color: Colors.white),
+                )),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(PageScaleTransition(const PageTwo()));
+                },
+                child: const Text(
+                  "Page Scale Transition",
                   style: TextStyle(color: Colors.white),
                 )),
           ],
