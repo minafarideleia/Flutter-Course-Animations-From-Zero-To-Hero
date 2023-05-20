@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class PositionedTransitionExamlpe extends StatefulWidget {
@@ -16,12 +18,38 @@ class _PositionedTransitionExamlpeState
   late Animation<RelativeRect> _tomAnimation;
   late Animation<RelativeRect> _spikeAnimation;
 
+  late Timer _timer;
+
+  @override
+  void dispose() {
+    // Cancel the timer when the widget is disposed
+    _cancelTimer();
+    super.dispose();
+  }
+
+  void _startTimer() {
+    // Create a periodic timer that executes a function every 5 seconds
+    _timer = Timer.periodic(Duration(seconds: 2), (timer) {
+      // Function to be executed every 5 seconds
+      _controller.repeat(reverse: true);
+      print("Timer executed!");
+      // Call any other functions or perform any actions here
+    });
+  }
+
+  void _cancelTimer() {
+    // Cancel the timer if it's active
+    if (_timer != null && _timer.isActive) {
+      _timer.cancel();
+    }
+  }
+
   @override
   void initState() {
     super.initState();
 
-    _controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 300));
+    _controller =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
 
     _jerryAnimation = RelativeRectTween(
             begin: const RelativeRect.fromLTRB(0, 0, 0, 0),
@@ -37,6 +65,8 @@ class _PositionedTransitionExamlpeState
             begin: const RelativeRect.fromLTRB(0, 0, 0, 0),
             end: const RelativeRect.fromLTRB(50, 50, 0, 0))
         .animate(_controller);
+
+    _startTimer();
   }
 
   void _startAnimation() {
@@ -46,12 +76,6 @@ class _PositionedTransitionExamlpeState
 
   void _reverseAnimation() {
     _controller.reverse();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 
   @override

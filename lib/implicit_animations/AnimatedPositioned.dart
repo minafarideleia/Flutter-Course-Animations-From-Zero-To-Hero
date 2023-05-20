@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -11,6 +13,42 @@ class AnimatedPositionedExample extends StatefulWidget {
 
 class _AnimatedPositionedExampleState extends State<AnimatedPositionedExample> {
   bool _startEating = true;
+
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Start the timer when the widget is initialized
+    _startTimer();
+  }
+
+  @override
+  void dispose() {
+    // Cancel the timer when the widget is disposed
+    _cancelTimer();
+    super.dispose();
+  }
+
+  void _startTimer() {
+    // Create a periodic timer that executes a function every 5 seconds
+    _timer = Timer.periodic(Duration(seconds: 2), (timer) {
+      // Function to be executed every 5 seconds
+      setState(() {
+        _startEating = !_startEating;
+      });
+      print("Timer executed!");
+      // Call any other functions or perform any actions here
+    });
+  }
+
+  void _cancelTimer() {
+    // Cancel the timer if it's active
+    if (_timer != null && _timer.isActive) {
+      _timer.cancel();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +95,7 @@ class _AnimatedPositionedExampleState extends State<AnimatedPositionedExample> {
                 top:
                     _startEating ? MediaQuery.of(context).size.height - 300 : 0,
                 left: 0,
-                duration: const Duration(milliseconds: 400),
+                duration: const Duration(seconds: 1),
                 child: Container(
                   width: 120,
                   height: 120,
