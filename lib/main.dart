@@ -25,6 +25,7 @@ import 'implicit_animations/AnimatedPositioned.dart';
 import 'implicit_animations/AnimatedPositionedDirectional.dart';
 import 'implicit_animations/AnimatedSwitcherExample.dart';
 import 'implicit_animations/AnimatedTextStyle.dart';
+import 'page_transitions/PageSizeTransition.dart';
 
 void main() {
   runApp(const MyApp());
@@ -286,6 +287,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: const Text(
                   "Page Slide Transition",
+                  style: TextStyle(color: Colors.white),
+                )),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(PageSizeTransition(const PageTwo()));
+                },
+                child: const Text(
+                  "Page Size Transition",
                   style: TextStyle(color: Colors.white),
                 )),
           ],
