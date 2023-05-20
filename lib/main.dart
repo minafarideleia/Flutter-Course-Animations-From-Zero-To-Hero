@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/implicit_animations/AnimatedAlignExample.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageFadeTransition.dart';
+import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageMixScaleRtotateTransition.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageMixSizeFadeTransition.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageRtoateTransition.dart';
 import 'package:flutter_course_animations_from_zero_to_hero/page_transitions/PageScaleTransition.dart';
@@ -308,6 +309,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: const Text(
                   "Page Mix Size Fade Transition",
+                  style: TextStyle(color: Colors.white),
+                )),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(PageMixScaleRotateTransition(const PageTwo()));
+                },
+                child: const Text(
+                  "Page Mix Scale Rotate Transition",
                   style: TextStyle(color: Colors.white),
                 )),
           ],
